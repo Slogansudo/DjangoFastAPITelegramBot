@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1> <span clsas="d-block">Profile</span></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+        <div class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-8">
+                  <div class="card">
+                    <img class="card-img-top" src="{% static 'auth/images/profile.jpg' %}" alt="Card image cap">
+                    <h1>Username: {{user.username}} </h1>
+                    <div class="card-body">
+                      <h1>First name: {{user.first_name}} <br><br>
+                          Last name: {{user.last_name}}<br><br>
+                          Email: {{user.email}}</h1>
+                    </div>
+                      <a href="{% url 'logout' %}"><button class="btn btn-success" id=follow> Logout </button></a><br>
+                      <a href="{% url 'settings' %}"><button class="btn btn-success" id=follows> Account settings </button></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
